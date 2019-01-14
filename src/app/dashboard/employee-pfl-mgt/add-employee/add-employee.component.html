@@ -1,0 +1,138 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <div class="main-header">
+                    <h4>Table</h4>
+                    <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                    
+                        <li class="breadcrumb-item"><a routerLink="/employee">Employee</a>
+                        </li>
+                        <li class="breadcrumb-item"><a routerLink="/employee">Add Employee</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+       <!-- Row start -->
+       <div class="row">
+        <!-- Form Control starts -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-header-text">Basic Information</h5>
+                </div>
+      
+                <div class="card-block">
+                    <form [formGroup]="employeBasicForm" (ngSubmit)="basicInfo()">
+                        <div class="row">  
+                                <div class="form-group col-md-4"> 
+                                        <label for="firstname" class="form-control-label">First Name</label>
+                                    
+                                        <input type="text" class="form-control" formControlName="firstname" id="firstname"  placeholder="Enter Firstname">
+                                        <span *ngIf="employeBasicForm.controls.firstname.invalid && employeBasicForm.controls.firstname.touched " class="text-danger">
+                                                 *required
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-4">
+                                        <label for="lastname" class="form-control-label">Last Name</label>
+                                        <input type="text" class="form-control" formControlName="lastname" id="lastname" placeholder="Enter Lastname">
+                                        <span *ngIf="employeBasicForm.controls.lastname.invalid && employeBasicForm.controls.lastname.touched " class="text-danger">
+                                                *required
+                                       </span>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                            <label for="middlename" class="form-control-label">Middle Name</label>
+                                            <input type="text" class="form-control" formControlName="middlename" id="middlename" placeholder="Enter Middlename">
+                                         
+                                        </div>
+                                    <div class="form-group col-md-4">
+                                            <label for="email" class="form-control-label">Email Address</label>
+                                            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter Email Address">
+                                            <span *ngIf="employeBasicForm.controls.email.invalid && employeBasicForm.email.lastname.touched " class="text-danger">
+                                                    *required
+                                           </span>
+                                        </div>
+                                    <div class="form-group col-md-4">
+                                            <label for="phone" class="form-control-label">Phone Number</label>
+                                            <input type="tel" class="form-control" formControlName="phone" id="phone" placeholder="Enter Phone Number">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                            <label for="exampleFormControlFile1">Profile Photo</label>
+                                            <input type="file" formControlName="profilePic"  class="form-control-file" id="exampleFormControlFile1">
+                                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6>Gender</h6>
+                                    <div class="form-check form-check-inline" >
+                                            <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio1" value="male">
+                                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio2" value="female">
+                                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                                          </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                    <label for="dob" class="form-control-label">Date Of Birth</label>
+                                    <input type="date" formControlName="dob" class="form-control" id="dob"  placeholder="Enter date of birth">
+                            </div>
+                            <div class="form-group col-md-4">
+                                    <label for="exampleSelect1">State Of Origin</label>
+                                    <select class="form-control" id="exampleSelect1" formControlName="stateOfOrigin">
+                                      <option value="lagos">Lagos</option>
+                                      <option value="ogun">Ogun</option>
+                                      <option value="kaduna">Kaduna</option>
+                                      <option value="kebbi">Kebbi</option>
+                                      <option value="auja">Abuja</option>
+                                    </select>
+                                  </div>
+                                 
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-4">
+                                        <label for="exampleSelect1">Local Govt</label>
+                                        <select formControlName="localGovt" class="form-control" id="exampleSelect1">
+                                          <option value="surulere">Surulere</option>
+                                          <option value="oshodi">Oshodi</option>
+                                          <option value="apap">Apapa</option>
+                                          <option value="alimosho">Alimosho</option>
+                                          <option value="kosofe">Kosofe</option>
+                                        </select>
+                                      </div>
+                                <div class="form-group col-md-4">
+                                        <label for="dob" class="form-control-label">Employee Date</label>
+                                        <input type="date" formControlName="employmentDate" class="form-control" id="dob"  placeholder="Enter date of birth">
+                                </div>
+                                <div class="form-group col-md-4">
+                                        <label for="exampleSelect1">Employee Status</label>
+                                        <select formControlName="employementStatus" class="form-control" id="exampleSelect1">
+                                          <option value="active">ACtive</option>
+                                          <option value="terminate">Terminated</option>
+                                          <option value="resigned">Resigned</option>
+                                          <option value="deceased">Deceased</option>
+                                  
+                                        </select>
+                                      </div>
+                                     
+                            </div>
+            
+        
+                        <button type="submit" class="btn btn-primary waves-effect waves-light m-r-30">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Form Control ends -->
+
+  
+    </div>
+    <!-- Row end -->
+    </div>
+
+</div>
