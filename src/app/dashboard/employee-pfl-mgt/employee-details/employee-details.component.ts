@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-employee',
-  templateUrl: './add-employee.component.html',
-  styleUrls: ['./add-employee.component.scss']
+  selector: 'app-employee-details',
+  templateUrl: './employee-details.component.html',
+  styleUrls: ['./employee-details.component.scss']
 })
-export class AddEmployeeComponent implements OnInit {
+export class EmployeeDetailsComponent implements OnInit {
 
   constructor() { }
   employeBasicForm = new FormGroup({
@@ -24,6 +24,7 @@ export class AddEmployeeComponent implements OnInit {
 
 
   });
+
   ngOnInit() {
   }
   basicInfo() {

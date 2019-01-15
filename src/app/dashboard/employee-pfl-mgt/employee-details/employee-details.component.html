@@ -1,0 +1,206 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <div class="main-header">
+                   
+                    <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                    
+                        <li class="breadcrumb-item"><a routerLink="/employee">Employee</a>
+                        </li>
+                        <li class="breadcrumb-item"><a routerLink="/employee">Details</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-tabs md-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home3" role="tab">Personal</a>
+                <div class="slide"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#profile3" role="tab">Jobs and Pay</a>
+                <div class="slide"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#messages3" role="tab">Document</a>
+                <div class="slide"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#settings3" role="tab">Record</a>
+                <div class="slide"></div>
+            </li>
+          
+        </ul>
+         
+        <div class="tab-content">
+            <div class="tab-pane active" id="home3" role="tabpanel">
+              <br>
+                <div class="row mt-5">
+                    <div class="col-xl-4 col-lg-12">
+                        <div class="card">
+                            <div class="user-block-2">
+                                <img class="img-fluid" src="assets/images/widget/user-1.png" alt="user-header">
+                                <h5>Josephin Villa</h5>
+                                <h6>Software Engineer</h6>
+                            </div>
+                            <div class="card-block">
+                                <div class="user-block-2-activities">
+                                    <div class="user-block-2-active">
+                                        <i class="icofont icofont-clock-time"></i> Status
+                                        <label class="label label-primary">Active</label>
+                                    </div>
+                                </div>
+                                <div class="user-block-2-activities">
+                                    <div class="user-block-2-active">
+                                        <i class="icofont icofont-email "></i> Email
+                                        <br>
+                                        <h6 class="text-primary">test@gmail.com</h6>
+                                    </div>
+                                </div>
+                
+                                <div class="user-block-2-activities">
+                                    <div class="user-block-2-active">
+                                        <i class="icofont icofont-phone"></i> Number
+                                        <h6 class="text-primary">+1-235-4857-3456</h6>
+                                    </div>
+                
+                                </div>
+                                <div class="user-block-2-activities">
+                                    <div class="user-block-2-active">
+                                        <i class="icofont icofont-picture"></i> Address
+                                        <h6 class="text-primary">No 12, oribawa ibeju lekki lagos</h6>
+                                    </div>
+                
+                                </div>
+
+                                <div class="user-block-2-activities">
+                                    <div class="user-block-2-active">
+                                        <i class="icofont icofont-notepad"></i> Reporting to
+                                        <h6 class="text-primary">Andrew Johnson</h6>
+                                    </div>
+                
+                                </div>
+                           
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-12">
+                        <div class="card">
+                            <div class="card-block">
+                                <form [formGroup]="employeBasicForm" (ngSubmit)="basicInfo()">
+                                    <div class="row emp-form">  
+                                            <div class="form-group col-md-6"> 
+                                                    <label for="firstname" class="form-control-label">First Name</label>
+                                                 
+                                                    <input type="text" class="form-control" formControlName="firstname" id="firstname"  placeholder="Enter Firstname">
+                                                  
+                                                </div>
+                                                
+                                                <div class="form-group col-md-6">
+                                                    <label for="lastname" class="form-control-label">Last Name</label>
+                                                    <input type="text" class="form-control" formControlName="lastname" id="lastname" placeholder="Enter Lastname">
+                                                  
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                        <label for="middlename" class="form-control-label">Middle Name</label>
+                                                        <input type="text" class="form-control" formControlName="middlename" id="middlename" placeholder="Enter Middlename">
+                                                     
+                                                    </div>
+                                                <div class="form-group col-md-6">
+                                                        <label for="email" class="form-control-label">Email Address</label>
+                                                        <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter Email Address">
+                                                   
+                                                    </div>
+                                                <div class="form-group col-md-6">
+                                                        <label for="phone" class="form-control-label">Phone Number</label>
+                                                        <input type="tel" class="form-control" formControlName="phone" id="phone" placeholder="Enter Phone Number">
+                                                    
+                                                    </div>
+                                    
+                                
+                                      
+                                        <div class="form-group col-md-6">
+                                                <label for="dob" class="form-control-label">Date Of Birth</label>
+                                                <input type="date" formControlName="dob" class="form-control" id="dob"  placeholder="Enter date of birth">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                                <label for="exampleSelect1"><b>State Of Origin</b></label>
+                                                <select class="form-control" id="exampleSelect1" formControlName="stateOfOrigin">
+                                                  <option value="lagos">Lagos</option>
+                                                  <option value="ogun">Ogun</option>
+                                                  <option value="kaduna">Kaduna</option>
+                                                  <option value="kebbi">Kebbi</option>
+                                                  <option value="auja">Abuja</option>
+                                                </select>
+                                              </div>
+                                             
+                               
+                                            <div class="form-group col-md-6">
+                                                    <label for="exampleSelect1"><b>Local Govt</b></label>
+                                                    <select formControlName="localGovt" class="form-control" id="exampleSelect1">
+                                                      <option value="surulere">Surulere</option>
+                                                      <option value="oshodi">Oshodi</option>
+                                                      <option value="apap">Apapa</option>
+                                                      <option value="alimosho">Alimosho</option>
+                                                      <option value="kosofe">Kosofe</option>
+                                                    </select>
+                                                  </div>
+                                            <div class="form-group col-md-6">
+                                                    <label for="dob" class="form-control-label">Employee Date</label>
+                                                    <input type="date" formControlName="employmentDate" class="form-control" id="dob"  placeholder="Enter date of birth">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                    <label for="exampleSelect1"><b>Employee Status</b></label>
+                                                    <select formControlName="employementStatus" class="form-control" id="exampleSelect1">
+                                                      <option value="active">ACtive</option>
+                                                      <option value="terminate">Terminated</option>
+                                                      <option value="resigned">Resigned</option>
+                                                      <option value="deceased">Deceased</option>
+                                              
+                                                    </select>
+                                                  </div>
+            
+                                                  <div class="col-md-6 mb-5">
+                                                        <h6>Gender</h6>
+                                                        <div class="form-check form-check-inline" >
+                                                                <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio1" value="male">
+                                                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio2" value="female">
+                                                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                                                              </div>
+                                                             
+                                                </div>
+                                                 
+                                        </div>
+                        
+                    
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light m-r-30">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="tab-pane" id="profile3" role="tabpanel">
+                <p>2.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet felis amet.</p>
+            </div>
+            <div class="tab-pane" id="messages3" role="tabpanel">
+                <p>3. This is Photoshop's version of Lorem IpThis is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean mas Cum sociis natoque penatibus et magnis dis.....<p>
+            </div>
+            <div class="tab-pane" id="settings3" role="tabpanel">
+                <p>4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet felis amet.</p>
+            </div>
+           
+        </div>
+    </div>
+
+</div>

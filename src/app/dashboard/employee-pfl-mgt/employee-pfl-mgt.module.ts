@@ -6,6 +6,7 @@ import { EmployeePflMgtRoutingModule } from './employee-pfl-mgt-routing.module';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [EmployeeComponent, AddEmployeeComponent]
+  declarations: [EmployeeComponent, AddEmployeeComponent, EmployeeDetailsComponent]
 })
 export class EmployeePflMgtModule { }

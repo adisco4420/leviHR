@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-12 p-0">
                 <div class="main-header">
-                    <h4>Table</h4>
+                   
                     <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                     
                         <li class="breadcrumb-item"><a routerLink="/employee">Employee</a>
@@ -28,62 +28,55 @@
       
                 <div class="card-block">
                     <form [formGroup]="employeBasicForm" (ngSubmit)="basicInfo()">
-                        <div class="row">  
-                                <div class="form-group col-md-4"> 
+                        <div class="row emp-form">  
+                                <div class="form-group col-md-6"> 
                                         <label for="firstname" class="form-control-label">First Name</label>
                                     
                                         <input type="text" class="form-control" formControlName="firstname" id="firstname"  placeholder="Enter Firstname">
                                         <span *ngIf="employeBasicForm.controls.firstname.invalid && employeBasicForm.controls.firstname.touched " class="text-danger">
-                                                 *required
+                                                 <p>*required</p>
                                         </span>
                                     </div>
                                     
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="lastname" class="form-control-label">Last Name</label>
                                         <input type="text" class="form-control" formControlName="lastname" id="lastname" placeholder="Enter Lastname">
                                         <span *ngIf="employeBasicForm.controls.lastname.invalid && employeBasicForm.controls.lastname.touched " class="text-danger">
-                                                *required
+                                               <p> *required</p>
                                        </span>
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                             <label for="middlename" class="form-control-label">Middle Name</label>
                                             <input type="text" class="form-control" formControlName="middlename" id="middlename" placeholder="Enter Middlename">
                                          
                                         </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                             <label for="email" class="form-control-label">Email Address</label>
                                             <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter Email Address">
                                             <span *ngIf="employeBasicForm.controls.email.invalid && employeBasicForm.controls.email.touched " class="text-danger">
-                                                    *required
+                                                    <p *ngIf="employeBasicForm.controls.email.errors.required">
+                                                       <span *ngIf="employeBasicForm.controls.email.errors.required"> *required</span>
+                                                       <span *ngIf="employeBasicForm.controls.email.errors.email"> *invalid email address</span>
+                                                    </p>
+ 
                                            </span>
                                         </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                             <label for="phone" class="form-control-label">Phone Number</label>
                                             <input type="tel" class="form-control" formControlName="phone" id="phone" placeholder="Enter Phone Number">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                            <label for="exampleFormControlFile1">Profile Photo</label>
-                                            <input type="file" formControlName="profilePic"  class="form-control-file" id="exampleFormControlFile1">
-                                          </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h6>Gender</h6>
-                                    <div class="form-check form-check-inline" >
-                                            <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio1" value="male">
-                                            <label class="form-check-label" for="inlineRadio1">Male</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                            <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio2" value="female">
-                                            <label class="form-check-label" for="inlineRadio2">Female</label>
-                                          </div>
-                            </div>
-                            <div class="form-group col-md-4">
+                                            <span *ngIf="employeBasicForm.controls.phone.invalid && employeBasicForm.controls.phone.touched ">
+                                               <p> *required</p>
+                                            </span>
+                                        </div>
+                        
+                    
+                          
+                            <div class="form-group col-md-6">
                                     <label for="dob" class="form-control-label">Date Of Birth</label>
                                     <input type="date" formControlName="dob" class="form-control" id="dob"  placeholder="Enter date of birth">
                             </div>
-                            <div class="form-group col-md-4">
-                                    <label for="exampleSelect1">State Of Origin</label>
+                            <div class="form-group col-md-6">
+                                    <label for="exampleSelect1"><b>State Of Origin</b></label>
                                     <select class="form-control" id="exampleSelect1" formControlName="stateOfOrigin">
                                       <option value="lagos">Lagos</option>
                                       <option value="ogun">Ogun</option>
@@ -93,10 +86,9 @@
                                     </select>
                                   </div>
                                  
-                        </div>
-                        <div class="row">
-                                <div class="form-group col-md-4">
-                                        <label for="exampleSelect1">Local Govt</label>
+                   
+                                <div class="form-group col-md-6">
+                                        <label for="exampleSelect1"><b>Local Govt</b></label>
                                         <select formControlName="localGovt" class="form-control" id="exampleSelect1">
                                           <option value="surulere">Surulere</option>
                                           <option value="oshodi">Oshodi</option>
@@ -105,12 +97,12 @@
                                           <option value="kosofe">Kosofe</option>
                                         </select>
                                       </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                         <label for="dob" class="form-control-label">Employee Date</label>
                                         <input type="date" formControlName="employmentDate" class="form-control" id="dob"  placeholder="Enter date of birth">
                                 </div>
-                                <div class="form-group col-md-4">
-                                        <label for="exampleSelect1">Employee Status</label>
+                                <div class="form-group col-md-6">
+                                        <label for="exampleSelect1"><b>Employee Status</b></label>
                                         <select formControlName="employementStatus" class="form-control" id="exampleSelect1">
                                           <option value="active">ACtive</option>
                                           <option value="terminate">Terminated</option>
@@ -119,6 +111,21 @@
                                   
                                         </select>
                                       </div>
+
+                                      <div class="col-md-6 mb-5">
+                                            <h6>Gender</h6>
+                                            <div class="form-check form-check-inline" >
+                                                    <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio1" value="male">
+                                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                                  </div>
+                                                  <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" formControlName="gender"  type="radio" name="gender" id="inlineRadio2" value="female">
+                                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                                  </div>
+                                                  <span *ngIf="employeBasicForm.controls.phone.invalid && employeBasicForm.controls.phone.touched ">
+                                                      <p> *required</p>
+                                                  </span>
+                                    </div>
                                      
                             </div>
             
